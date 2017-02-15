@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module title="Packages" name="package" multi="0" library="0" dashboard="0" icon="suitcase" ranking="0" home="0" main="0" validation="0" dates="0" release="0" index="16.5">
+	<!-- resizing
+	[0] 1 single image
+	[1] 1x big, 1x medium, 1x small -->
+	<medias max="0" resizing="1">
+		<big maxw="1920" maxh="1440"/>
+		<medium maxw="600" maxh="600"/>
+		<small maxw="400" maxh="400"/>
+	</medias>
+	<list order="name">
+		<col label="Name" name="name"/>
+		<col label="Days" name="days"/>
+		<col label="Min. nights" name="min_nights"/>
+		<col label="Max. nights" name="max_nights"/>
+	</list>
+	<form>
+        <field multi="0" label="Name" name="name" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Days" name="days" type="checkbox" required="1" unique="0" validation="none" comment="On which nights the package applies?">
+            <options>
+                <option value="1">Mon</option>
+                <option value="2">Tue</option>
+                <option value="3">Wed</option>
+                <option value="4">Thu</option>
+                <option value="5">Fri</option>
+                <option value="6">Sat</option>
+                <option value="7">Sun</option>
+            </options>  
+        </field>
+        <field multi="0" label="Check in day" name="day_start" type="select" required="0" unique="0" validation="none" comment="Optional day for check in">
+            <options>
+                <option value="1">Monday</option>
+                <option value="2">Tuesday</option>
+                <option value="3">Wednesday</option>
+                <option value="4">Thursday</option>
+                <option value="5">Friday</option>
+                <option value="6">Saterday</option>
+                <option value="7">Sunday</option>
+            </options>  
+        </field>
+        <field multi="0" label="Check out day" name="day_end" type="select" required="0" unique="0" validation="none" comment="Optional day for check out">
+            <options>
+                <option value="1">Monday</option>
+                <option value="2">Tuesday</option>
+                <option value="3">Wednesday</option>
+                <option value="4">Thursday</option>
+                <option value="5">Friday</option>
+                <option value="6">Saterday</option>
+                <option value="7">Sunday</option>
+            </options>  
+        </field>
+        <field multi="0" label="Min. nights" name="min_nights" type="text" required="0" unique="0" validation="numeric" comment="Min. number of nights"/>
+        <field multi="0" label="Max. nights" name="max_nights" type="text" required="0" unique="0" validation="numeric" comment="Max. number of nights"/>
+	</form>
+    <roles>
+        <user type="administrator" permissions="all"/>
+        <user type="manager" permissions="no_access"/>
+        <user type="editor" permissions="no_access"/>
+        <user type="hotel" permissions="add,edit,upload"/>
+    </roles>
+</module>
